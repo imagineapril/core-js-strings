@@ -515,7 +515,7 @@ function extractEmails(str) {
 
 /**
  * Encode specified string with ROT13 cipher
- * See details:  
+ * See details:  https://en.wikipedia.org/wiki/ROT13
  *
  * @param {string} str - The input string.
  * @return {string} - The ROT13 encoded string.
@@ -529,17 +529,10 @@ function extractEmails(str) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
-  // const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-  // const arrayOfAlphabet = alphabet.split('');
-  // const rot13 = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
-  // const arrayOfRot13 = rot13.split('');
-  // const arrayToEncode = str.split('');
-  // const encodedArray = [];
-
-  // for (let i = 0; i < arrayToEncode.length; i += 1) {
-  // }
+function encodeToRot13(str) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const rot13 = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  return str.replace(/[a-zA-Z]/g, (char) => rot13[alphabet.indexOf(char)]);
 }
 
 /**
