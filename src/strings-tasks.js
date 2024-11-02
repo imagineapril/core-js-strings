@@ -324,23 +324,22 @@ function containsSubstring(str, substring) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  // const arrayOfStr = str.toLowerCase().split('');
-  // let count = 0;
-  // for (let i = 0; i < arrayOfStr.length; i += 1) {
-  //   if (
-  //     arrayOfStr[i] === 'a' ||
-  //     arrayOfStr[i] === 'e' ||
-  //     arrayOfStr[i] === 'i' ||
-  //     arrayOfStr[i] === '0' ||
-  //     arrayOfStr[i] === 'u' ||
-  //     arrayOfStr[i] === 'y'
-  //   ) {
-  //     count += 1;
-  //   }
-  // }
-  // return count;
-  throw new Error('Not implemented');
+function countVowels(str) {
+  const arrayOfStr = str.toLowerCase().split('');
+  let count = 0;
+  for (let i = 0; i < arrayOfStr.length; i += 1) {
+    if (
+      arrayOfStr[i] === 'a' ||
+      arrayOfStr[i] === 'e' ||
+      arrayOfStr[i] === 'i' ||
+      arrayOfStr[i] === 'o' ||
+      arrayOfStr[i] === 'u' ||
+      arrayOfStr[i] === 'y'
+    ) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 /**
@@ -516,7 +515,7 @@ function extractEmails(str) {
 
 /**
  * Encode specified string with ROT13 cipher
- * See details:  https://en.wikipedia.org/wiki/ROT13
+ * See details:  
  *
  * @param {string} str - The input string.
  * @return {string} - The ROT13 encoded string.
